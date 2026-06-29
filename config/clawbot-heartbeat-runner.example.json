@@ -1,0 +1,15 @@
+{
+  "enabled": false,
+  "dryRun": true,
+  "gatewayUrl": "http://127.0.0.1:18789",
+  "channel": "openclaw-weixin",
+  "account": "example-im-bot",
+  "target": "example-contact",
+  "timezone": "Asia/Shanghai",
+  "quietHours": {
+    "start": "23:00",
+    "end": "08:00"
+  },
+  "memoryPath": "workspace.example/MEMORY.md",
+  "heartbeatStatePath": "workspace.example/memory/heartbeat-state.json"
+}

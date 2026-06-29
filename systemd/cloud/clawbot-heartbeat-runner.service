@@ -1,0 +1,8 @@
+[Unit]
+Description=Clawbot external heartbeat runner cloud dry-run-safe unit
+After=openclaw-gateway.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/clawbot/clawbot-runtime
+ExecStart=/usr/bin/python3 scripts/clawbot_heartbeat_runner.py

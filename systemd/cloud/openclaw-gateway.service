@@ -1,0 +1,15 @@
+[Unit]
+Description=OpenClaw Gateway for Clawbot cloud runtime
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/clawbot/clawbot-runtime
+Environment=OPENCLAW_GATEWAY_PORT=18789
+ExecStart=/opt/clawbot/node_modules/.bin/openclaw gateway --port 18789
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

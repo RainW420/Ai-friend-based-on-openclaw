@@ -1,0 +1,45 @@
+{
+  "gateway": {
+    "mode": "local",
+    "bind": "loopback",
+    "port": 18789,
+    "auth": "token",
+    "token": "REPLACE_WITH_STRONG_TOKEN"
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "./workspace",
+      "contextTokens": 80000,
+      "params": {
+        "cacheRetention": "long"
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "default": true,
+        "tools": {
+          "exec": false
+        },
+        "profile": "messaging"
+      }
+    ]
+  },
+  "channels": {
+    "openclaw-weixin": {
+      "enabled": false,
+      "dmOnly": true,
+      "allowlist": [],
+      "exec": false
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "openclaw-weixin"
+      }
+    }
+  ]
+}
+

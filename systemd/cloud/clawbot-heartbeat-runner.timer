@@ -1,0 +1,12 @@
+[Unit]
+Description=Run Clawbot external heartbeat runner on cloud
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=30min
+RandomizedDelaySec=90
+AccuracySec=30s
+Unit=clawbot-heartbeat-runner.service
+
+[Install]
+WantedBy=timers.target

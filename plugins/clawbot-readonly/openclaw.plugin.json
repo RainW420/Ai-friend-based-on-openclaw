@@ -1,0 +1,19 @@
+{
+  "id": "clawbot-readonly",
+  "name": "Clawbot Readonly Tools",
+  "description": "Expose fixed read-only deployment status checks for the Clawbot/OpenClaw workspace.",
+  "version": "0.1.0",
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "clawbot_status"
+    ]
+  }
+}

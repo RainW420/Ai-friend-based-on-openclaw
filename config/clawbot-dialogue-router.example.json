@@ -1,0 +1,13 @@
+{
+  "enabled": false,
+  "dryRun": true,
+  "sessionRoot": "workspace.example/sessions",
+  "memoryRoot": "workspace.example/memory",
+  "personaRoot": "personas/demo",
+  "routingStatePath": "workspace.example/memory/dialogue-router-state.json",
+  "privacy": {
+    "redactLocalPaths": true,
+    "redactMessageIds": true,
+    "redactAccountIds": true
+  }
+}

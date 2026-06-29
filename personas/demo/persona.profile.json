@@ -1,0 +1,22 @@
+{
+  "slug": "demo",
+  "displayName": "Demo Companion",
+  "version": "0.1.0",
+  "description": "A safe public starter persona for local-first Clawbot deployments.",
+  "language": "zh-CN",
+  "privacy": {
+    "containsPrivateUserFacts": false,
+    "containsRuntimeLogs": false,
+    "containsAccountIds": false,
+    "safeForPublicGitHub": true
+  },
+  "files": [
+    "AGENTS.md",
+    "IDENTITY.md",
+    "SOUL.md",
+    "MEMORY.md",
+    "USER.md",
+    "TOOLS.md",
+    "HEARTBEAT.md"
+  ]
+}

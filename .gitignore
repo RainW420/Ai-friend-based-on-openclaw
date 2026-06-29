@@ -1,0 +1,42 @@
+# Python generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node generated files
+node_modules/
+plugins/*/node_modules/
+dist/
+plugins/*/dist/
+npm-debug.log*
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+secrets.json
+auth-profiles*.json
+.openclaw/
+
+# Runtime logs and local state
+logs/*.jsonl
+logs/runtime/
+logs/tasks/
+logs/hook-diag.log
+workspace/memory/
+workspace/clawbot/memory/.dreams/
+workspace/persona-backups/
+logs/persona-backups/
+
+# Generated migration bundles and restored artifacts
+*.tar.gz
+*.tgz
+logs/deploy/*restore*/
+logs/deploy/*runtime.tar.gz
+logs/deploy/*bundle*.tar.gz
+
+# Local OS/editor files
+.DS_Store
+Thumbs.db
+*.swp
+config/open-source-private-terms.local.txt

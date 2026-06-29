@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run Python unit tests
+        run: |
+          python -m unittest discover -s scripts -p "test_*.py" -v
+
+  open-source-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run open source audit
+        run: |
+          python scripts/open_source_audit.py --json
+      - name: Build and audit public snapshot
+        run: |
+          python scripts/build_public_snapshot.py --output /tmp/clawbot-public-snapshot
+          python scripts/open_source_audit.py --root /tmp/clawbot-public-snapshot --json
+          test -f /tmp/clawbot-public-snapshot/PUBLIC_SNAPSHOT_MANIFEST.json
+
+  plugin-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install and test plugin
+        run: |
+          cd plugins/clawbot-readonly
+          npm ci
+          npm test
+          npm run build
+          npm run plugin:validate
